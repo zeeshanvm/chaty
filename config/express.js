@@ -4,9 +4,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     session =require('express-session'),
     methodOverride = require('method-override'),
+    //sequelize = require('sequelize');
     config = require('./config');
 
-
+//var uri = '/Users/Atif/Zeeshan/webstorm/ChatApplication/'
 module.exports = function()
 {
     console.log(__dirname);

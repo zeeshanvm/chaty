@@ -5,6 +5,7 @@ module.exports = function(sequelize)
 {
     var Group = sequelize.define('group',{
         groupId:Sequelize.INTEGER
-     })
+     });
+    Group.sync({force:false});
 return Group;
 };

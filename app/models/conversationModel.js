@@ -1,6 +1,6 @@
 module.exports = function(sequelize)
 {
-    var Conversation = Sequelize.define('conversation',{
+    var Conversation = sequelize.define('conversation',{
         sender:{
             type:Sequelize.STRING
         },
@@ -8,15 +8,16 @@ module.exports = function(sequelize)
             type:Sequelize.STRING
         },
         message:Sequelize.TEXT,
-        img:{
-
-
-        },
+        //img:{
+        //
+        //
+        //},
         timeStamp:Sequelize.DATE
 
 
 
-    })
+    });
+    Conversation.sync({force:false});
     return Conversation;
 
 };

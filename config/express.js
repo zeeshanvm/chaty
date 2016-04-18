@@ -4,14 +4,20 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     session =require('express-session'),
     methodOverride = require('method-override'),
+    http = require('http'),
+    //socketio = require('socket.io'),
     //sequelize = require('sequelize');
     config = require('./config');
 
 //var uri = '/Users/Atif/Zeeshan/webstorm/ChatApplication/'
 module.exports = function()
 {
-    console.log(__dirname);
+    //console.log(__dirname);
+
+    //var server = http.createServer(app);
+    //var io = socketio.listen(server);
     var app = express();
+
     if(process.env.NODE_ENV === 'development')
     {
         //console.log('hi');
@@ -45,4 +51,4 @@ module.exports = function()
     return app;
 
 
-}
+};

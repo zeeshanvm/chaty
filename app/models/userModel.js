@@ -7,9 +7,9 @@ module.exports = function(sequelize) {
            type:Sequelize.STRING,
            //unique:true,
            notNull:true,
-           validate :{
-                 notNull:true,
-           }
+           //validate :{
+           //      notNull:true,
+           //}
 
        },
         firstName: {
@@ -28,7 +28,7 @@ module.exports = function(sequelize) {
 
         freezeTableName: true // Model tableName will be the same as the model name
     });
-    User.sync({force:true});
+    User.sync({force:false});
 
 
  return User;

@@ -1,0 +1,21 @@
+<section ng-controller = "ChatController">
+    <div ng-repeat = "message in messages" ng-switch="message.type">
+        <strong ng-switch-when="status">
+        <span ng-bind="message.username"></span>
+            <span>:</span>
+            <span ng-bind="message.text"></span>
+        </strong>
+        <span>
+            <span data-ng-bind="message.created | date:'mediumTime'"></span>
+             <span data-ng-bind="message.username"></span>
+             <span>:</span>
+             <span data-ng-bind="message.text"></span>
+        </span>
+    </div>
+    <form ng-submit="sendMessage();">
+        <input type="text" ng-model="messageText"/>
+        <input type="submit">
+
+    </form>
+
+</section>

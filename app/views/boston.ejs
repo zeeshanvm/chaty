@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+<script>
+    function  clickMe(){
+
+        console.log('clicked');
+    }
+
+</script>
+</head>
+<body>
+    <div class="Chat">
+        <input type="text" class="chat-name" placeholder="Enter your name">
+        <div class="chat-messages"></div>
+        <textarea placeholder="type your message here"></textarea>
+        <div class="status">Status:<span>Idle</span></div>
+
+    <button type="button" class="button-blue" onclick="clickMe()">send</button>
+    </div>
+    <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+</body>
+
+
+</html>

@@ -5,20 +5,32 @@ var express = require('express'),
     session =require('express-session'),
     methodOverride = require('method-override'),
     http = require('http'),
-    //socketio = require('socket.io'),
+    socketio = require('socket.io'),
     //sequelize = require('sequelize');
-    config = require('./config');
+    config = require('./config'),
+    app = express();
+
 
 //var uri = '/Users/Atif/Zeeshan/webstorm/ChatApplication/'
 module.exports = function()
 {
     //console.log(__dirname);
 
-    //var server = http.createServer(app);
-    //var io = socketio.listen(server);
-    var app = express();
+    var server = http.createServer(app);
+    var io = socketio.listen(8080);
+    app.use(express.static('public'));
 
-    if(process.env.NODE_ENV === 'development')
+    io.on('connect',function(socket){
+    console.log("user has been connected");
+        socket.on('input',function(data){
+
+            console.log(data.name+" : "+data.message);
+
+
+        })
+
+    });
+     if(process.env.NODE_ENV === 'development')
     {
         //console.log('hi');
         app.use(morgan('dev'));
@@ -46,7 +58,7 @@ module.exports = function()
     }));
 
 
-    app.use(express.static('./public'));
+    app.use(express.static('./public/chat/views'));
     require('../app/routes/server.routes.js')(app);
     return app;
 

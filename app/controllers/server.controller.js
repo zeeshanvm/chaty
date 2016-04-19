@@ -13,7 +13,7 @@ exports.login = function(req, res) {
         console.log(req.sessionID);
     }
     res.session = new Date();
-    res.render('index',{title:'Welllllcome'});
+    res.render('boston',{title:'Welllllcome'});
     //res.send('login Page');
 
 };
